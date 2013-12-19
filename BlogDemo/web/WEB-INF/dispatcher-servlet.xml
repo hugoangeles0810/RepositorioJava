@@ -16,7 +16,7 @@
     <!--RECONOCE LAS ANOTACIONES, NO ES NECESARIO SI UTILIZAMOS mvc:annotation-driver-->    
     <!--<context:annotation-config/>-->
     <!--TODO LO QUE EN MI PROYECTO UTILICE COM.SPRING VA A USAR ANOTACIONES PARA CONVERTIR EN BEANS Y YA NO CONFIGURAR XMLS-->
-    <context:component-scan base-package="com.diarioru" />
+    <context:component-scan base-package="com.blog" />
     <!--RECONOCE LAS ANOTACIONES y LAS INTRODUCE DENTRO DEL CONTEXTO MVC-->   
     <mvc:annotation-driven />
     <!--PERMITE EJECUTAR CODIGO AOP-->   

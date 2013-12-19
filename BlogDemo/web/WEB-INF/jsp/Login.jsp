@@ -10,7 +10,7 @@
         <link href="static/css/estilos.css" rel="stylesheet"/>
         <script src="static/js/jquery-1.10.2.min.js"></script>
         <script src="static/js/bootstrap.min.js"></script>
-        <title>RU</title>
+        <title>Blogers v1.0</title>
     </head>
 
     <body>
@@ -18,7 +18,8 @@
             <div class="row">
                 <header class="span12">
                     <blockquote>
-                        <h1>RU</h1>                        
+                        <h1>Blogers</h1>
+                        <a href="registrarme.html" class="btn btn-primary btn-mini btn-logout">Registrarme</a>
                     </blockquote>
                 </header>
                 <hr/>

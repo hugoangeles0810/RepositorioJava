@@ -9,11 +9,12 @@
     <security:http auto-config="true">
         <security:intercept-url pattern="/static/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <security:intercept-url pattern="/logon.html" access="IS_AUTHENTICATED_ANONYMOUSLY" />        
+        <security:intercept-url pattern="/registrarme.html" access="IS_AUTHENTICATED_ANONYMOUSLY" />        
         <security:intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
         <security:intercept-url pattern="/**" access="ROLE_USER, ROLE_ADMIN" />       
         <!--<security:intercept-url pattern="/**" access="IS_AUTHENTICATED_FULLY"/>-->
         
-        <security:form-login authentication-failure-url="/logon.html?login_error=1" default-target-url="/requerimiento.html" login-page="/logon.html" always-use-default-target="true"/>	
+        <security:form-login authentication-failure-url="/logon.html?login_error=1" default-target-url="/home.html" login-page="/logon.html" always-use-default-target="true"/>	
         <security:logout logout-success-url="/logon.html" />
         
         <!--
@@ -27,8 +28,8 @@
              <security:password-encoder hash="md5"/>
             <security:jdbc-user-service 
                 data-source-ref="dataSource"
-                users-by-username-query="select u.usuario_id as username, u.password as password, 'true' as enabled from USUARIO u where u.usuario_id = ?"
-                authorities-by-username-query="select ur.usuario_id as username, r.nombre as authority from ROL_USUARIO ur inner join ROL r on ur.rol_id = r.rol_id where ur.usuario_id = ?"
+                users-by-username-query="select u.usuario as username, u.password as password, 'true' as enabled from usuario u where u.usuario = ?"
+                authorities-by-username-query="select u.usuario as username, r.nombre as authority from usuario u inner join rol r on u.rol_id = r.rol_id where u.usuario = ?"
             />
             <!--<security:user-service>
                 <security:user name="admin" password="1234" authorities="ROLE_USER, ROLE_ADMIN" />

@@ -3,27 +3,27 @@
 <ul class="nav nav-list">
     
     <!--MENU DE USUARIO-->
-    <li class="nav-header">Requerimiento</li>
-    <li <c:if test="${menu eq 'Requerimiento'}">class="active"</c:if>>
-        <a href="<c:url value="/requerimiento.html"/>">Generar requerimiento</a>
+    <li class="nav-header">Perfil</li>
+    <li class="active">
+        <a href="<c:url value="/datos-personales.html"/>">Datos Personales</a>
     </li>
-    <li <c:if test="${menu eq 'Comentario'}">class="active"</c:if>>
-        <a href="<c:url value="/comentar-requerimiento.html"/>">Comentario requerimiento</a>
+    <li class="">
+        <a href="<c:url value="/configurar-privacidad.html"/>">Configuración Privacidad</a>
     </li>
-    <li class="nav-header">Retrospectiva</li>
-    <li <c:if test="${menu eq 'Retrospectiva'}">class="active"</c:if>>
-        <a href="<c:url value="/retrospectiva.html"/>">Sugerencias e ideas</a>
+    <li class="nav-header">Mis Entradas</li>
+    <li class="">
+        <a href="<c:url value="/ultimas-entradas.html"/>">Ultimas entradas</a>
     </li>
      
     
     <!--MENU DE ADMINISTRADOR-->
     <c:if test="${role eq 'ADMINISTRADOR'}">
     <li class="nav-header">Administracion</li>
-    <li <c:if test="${menu eq 'Usuario'}">class="active"</c:if>>
+    <li class="">
         <a href="<c:url value="/admin/usuarios.html"/>">Usuarios</a>
     </li>
-    <li <c:if test="${menu eq 'Sprint'}">class="active"</c:if>>
-        <a href="<c:url value="/admin/sprints.html"/>">Sprints</a>
+    <li class="">
+        <a href="<c:url value="/admin/contenido.html"/>">Contenido</a>
     </li>
     </c:if>
 </ul>
