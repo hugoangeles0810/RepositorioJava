@@ -4,6 +4,7 @@
  */
 package com.blog.entidades;
 
+import com.sun.istack.internal.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -16,15 +17,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 /**
  *
@@ -42,22 +39,18 @@ public class Usuario implements Serializable {
     private Integer id;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 250)
     @Column(name = "nombre", nullable = false, length = 250)
     private String nombre;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 250)
     @Column(name = "correo", nullable = false, length = 250)
     private String correo;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 30)
     @Column(name = "usuario", nullable = false, length = 30)
     private String usuario;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 250)
     @Column(name = "password", nullable = false, length = 250)
     private String password;
     @Column(name = "fecha_nacimiento")

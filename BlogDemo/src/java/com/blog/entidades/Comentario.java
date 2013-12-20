@@ -18,8 +18,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 /**
  *
@@ -35,13 +33,10 @@ public class Comentario implements Serializable {
     @Column(name = "id", nullable = false)
     private Integer id;
     @Basic(optional = false)
-    @NotNull
     @Lob
-    @Size(min = 1, max = 65535)
     @Column(name = "contenido", nullable = false, length = 65535)
     private String contenido;
     @Basic(optional = false)
-    @NotNull
     @Column(name = "fecha_comentario", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date fechaComentario;
