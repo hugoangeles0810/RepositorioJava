@@ -4,7 +4,6 @@
  */
 package com.blog.entidades;
 
-import com.sun.istack.internal.NotNull;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
@@ -31,7 +30,6 @@ public class Rol implements Serializable {
     @Column(name = "rol_id", nullable = false)
     private Integer rolId;
     @Basic(optional = false)
-    @NotNull
     @Column(name = "nombre", nullable = false, length = 250)
     private String nombre;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "rolId")

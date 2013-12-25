@@ -61,4 +61,10 @@
     <!--DE OPERACIONES VAN A CONVERTIRSE NE TRANSACCIONALAES Y LAS VUELVEN MAS SEGURAS (LE PONE EL BEGIN, COMMIT, ROLLBACK)-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
+    <tx:advice id="txId" transaction-manager="transactionManager" >
+        <tx:attributes>
+            <tx:method name="*" rollback-for="com.blog.util.ExcepcionNegocio" ></tx:method>
+        </tx:attributes>
+    </tx:advice>
+    
 </beans>

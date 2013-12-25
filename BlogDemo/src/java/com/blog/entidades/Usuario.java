@@ -4,7 +4,6 @@
  */
 package com.blog.entidades;
 
-import com.sun.istack.internal.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -38,19 +37,15 @@ public class Usuario implements Serializable {
     @Column(name = "id", nullable = false)
     private Integer id;
     @Basic(optional = false)
-    @NotNull
     @Column(name = "nombre", nullable = false, length = 250)
     private String nombre;
     @Basic(optional = false)
-    @NotNull
     @Column(name = "correo", nullable = false, length = 250)
     private String correo;
     @Basic(optional = false)
-    @NotNull
     @Column(name = "usuario", nullable = false, length = 30)
     private String usuario;
     @Basic(optional = false)
-    @NotNull
     @Column(name = "password", nullable = false, length = 250)
     private String password;
     @Column(name = "fecha_nacimiento")

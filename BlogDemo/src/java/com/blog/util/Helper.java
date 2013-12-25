@@ -48,6 +48,12 @@ public class Helper {
         modelo.addObject("role", (user.getAuthorities().iterator().next().getAuthority()).equalsIgnoreCase("ROLE_ADMIN") ? "ADMINISTRADOR" : "USUARIO");
         modelo.addObject("menu",modelo.getViewName());
     }
+    
+    public static String userName(){
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return user.getUsername();
+    }
+    
 //    
 //    public static Usuario validarUsuario(Usuario usuario) throws ExcepcionNegocio{
 //        if (usuario.getCodigo().isEmpty() 

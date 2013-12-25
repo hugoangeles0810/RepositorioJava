@@ -17,7 +17,6 @@
         <script src="static/js/bootstrap.min.js"></script>
         <script src="static/js/alertify.js"></script>
         <script src="static/js/registro.js"></script>
-        <script src="static/js/jquery.validate.js"></script>
         <title>Blogers v1.0</title>
     </head>
 

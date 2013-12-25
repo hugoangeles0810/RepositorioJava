@@ -4,7 +4,6 @@
  */
 package com.blog.entidades;
 
-import com.sun.istack.internal.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -37,16 +36,13 @@ public class Entrada implements Serializable {
     @Column(name = "id", nullable = false)
     private Integer id;
     @Basic(optional = false)
-    @NotNull
     @Column(name = "titulo", nullable = false, length = 250)
     private String titulo;
     @Basic(optional = false)
-    @NotNull
     @Lob
     @Column(name = "articulo", nullable = false, length = 65535)
     private String articulo;
     @Basic(optional = false)
-    @NotNull
     @Column(name = "fecha_publicacion", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date fechaPublicacion;
