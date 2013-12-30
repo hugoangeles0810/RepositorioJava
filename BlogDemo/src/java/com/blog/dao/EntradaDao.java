@@ -6,6 +6,7 @@ package com.blog.dao;
 
 import com.blog.entidades.Entrada;
 import com.blog.util.ExcepcionNegocio;
+import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
@@ -34,6 +35,12 @@ public class EntradaDao extends HibernateDaoSupport {
         }
         
         return rpta;
+    }
+    
+    public List<Entrada> getListaUltimasEntradas() throws Exception{
+        List<Entrada> listEntradas;
+        listEntradas = getHibernateTemplate().find("SELECT e FROM Entrada e ORDER BY e.fechaPublicacion");
+        return listEntradas;
     }
     
 }

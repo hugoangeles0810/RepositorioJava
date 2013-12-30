@@ -36,7 +36,7 @@
         <property name="hibernateProperties">
             <props>
                 <!--PARA QUE EL HIBERNATE SEPA Q VAMOS A TRABAJAR EN UNA BASE MYSQL-->
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
                 <!--ME VA IR MOSTRANDO EN TIEMPO REAL TODO LO QUE EL HIBERNATE VA HACIENDO-->
                 <prop key="hibernate.show_sql">true</prop> 
             </props>
@@ -60,11 +60,5 @@
     <!--ME PERMITE AÑADIR EN MI CODIGO @TRANSACCIONAL Q ME DICEN CUANDO UN METODO O UN CONJUNTO-->
     <!--DE OPERACIONES VAN A CONVERTIRSE NE TRANSACCIONALAES Y LAS VUELVEN MAS SEGURAS (LE PONE EL BEGIN, COMMIT, ROLLBACK)-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
-
-    <tx:advice id="txId" transaction-manager="transactionManager" >
-        <tx:attributes>
-            <tx:method name="*" rollback-for="com.blog.util.ExcepcionNegocio" ></tx:method>
-        </tx:attributes>
-    </tx:advice>
     
 </beans>

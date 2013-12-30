@@ -21,6 +21,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 /**
  *
@@ -31,7 +33,22 @@ import javax.persistence.TemporalType;
 public class Entrada implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GenericGenerator(name = "generadorIdUsuario", strategy = "org.hibernate.id.TableHiLoGenerator" 
+//            , parameters = {
+//            @Parameter(value = "entrada", name = "table"),
+//            @Parameter(value = "id", name = "column"),
+//            @Parameter(value = "0", name = "max_lo")} )
+//    @GenericGenerator(
+//        name="hibseq",
+//        strategy = "seqhilo",
+//        parameters = {
+//            @Parameter(name="max_lo", value = "0"),
+//            @Parameter(name="sequence", value="sequenceEntrada")
+//        }
+//     )
+//    @GeneratedValue(generator = "hibseq")
+//    @GeneratedValue(generator = "generadorIdUsuario")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Basic(optional = false)
     @Column(name = "id", nullable = false)
     private Integer id;

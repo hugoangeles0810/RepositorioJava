@@ -21,6 +21,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 /**
  *
@@ -32,7 +34,20 @@ import javax.persistence.UniqueConstraint;
 public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GenericGenerator(name = "generadorIdUsuario", strategy = "org.hibernate.id.TableHiLoGenerator" 
+//            , parameters = {
+//            @Parameter(value = "hibernate_id_generation", name = "usuario"),
+//            @Parameter(value = "0", name = "max_lo")} )
+//    @GenericGenerator(
+//        name="hibseq_usuario",
+//        strategy = "seqhilo",
+//        parameters = {
+//            @Parameter(name="max_lo", value = "0"),
+//            @Parameter(name="sequence", value="sequenceUsuario")
+//        }
+//     )
+//    @GeneratedValue(generator = "hibseq_usuario")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Basic(optional = false)
     @Column(name = "id", nullable = false)
     private Integer id;

@@ -25,8 +25,8 @@
                     <blockquote>
                         <h3>Blog de ${user}</h3>
                     </blockquote>
-                    <div id="contenido" border="1">
-                        <p>En esta parte ira todo lo referente al contenido del Blog</p>
+                    <div id="contenido">
+                        
                     </div>
                 </section>
             </div>

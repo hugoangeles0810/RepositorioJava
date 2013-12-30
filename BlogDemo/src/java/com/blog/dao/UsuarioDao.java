@@ -6,7 +6,6 @@ package com.blog.dao;
 
 import com.blog.entidades.Usuario;
 import com.blog.util.ExcepcionNegocio;
-import com.blog.util.Helper;
 import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,25 +27,18 @@ public class UsuarioDao extends HibernateDaoSupport {
     public boolean registrarUsuario(Usuario usuario) throws Exception {
         boolean rpta = false;
         Usuario flag = new Usuario();
-        
-        flag.setNombre("Hebert");
-        flag.setUsuario("Hebert");
-        flag.setPassword(Helper.md5("123456"));
-        flag.setCorreo("hebert@hotmail.com");
-        
-        
-        
+        usuario.setId(1);
         try {
             if (usuario != null) {
                 getHibernateTemplate().save(usuario);
-//                System.out.println("---------------------------");
-//                System.out.println("Probando ....");
+                System.out.println("------------------------------");
+                System.out.println("ID: " + usuario.getId());
 //                getHibernateTemplate().save(flag);
-//                System.out.println("---------------------------");
+                System.out.println("------------------------------");
                 rpta = true;
             }
         } catch (Exception e) {
-            throw new ExcepcionNegocio("Probando Transaccionalidad");
+            throw new ExcepcionNegocio(e.getMessage());
         }  
             
         return rpta;

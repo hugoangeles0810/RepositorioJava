@@ -6,6 +6,7 @@ package com.blog.servicios;
 
 import com.blog.entidades.Entrada;
 import com.blog.negocio.EntradaNegocio;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +15,8 @@ import org.springframework.stereotype.Service;
  * @author Hugo
  */
 @Service
-public class EntradaServicio implements EntradaServicioInterface{
-    
+public class EntradaServicio implements EntradaServicioInterface {
+
     @Autowired
     private EntradaNegocio entradaNegocio;
 
@@ -23,5 +24,9 @@ public class EntradaServicio implements EntradaServicioInterface{
     public boolean guardarEntrada(Entrada entrada) throws Exception {
         return entradaNegocio.guardarEntrada(entrada);
     }
-    
+
+    @Override
+    public List<Entrada> getListaUltimasEntradas() throws Exception {
+        return entradaNegocio.getListaUltimasEntradas();
+    }
 }

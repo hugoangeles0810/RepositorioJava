@@ -5,6 +5,7 @@
 package com.blog.servicios;
 
 import com.blog.entidades.Entrada;
+import java.util.List;
 
 /**
  *
@@ -13,5 +14,7 @@ import com.blog.entidades.Entrada;
 public interface EntradaServicioInterface {
     
     public boolean guardarEntrada(Entrada entrada) throws Exception;
+    
+    public List<Entrada> getListaUltimasEntradas() throws Exception;
     
 }

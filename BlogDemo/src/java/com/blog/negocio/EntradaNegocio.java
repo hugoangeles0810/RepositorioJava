@@ -6,6 +6,7 @@ package com.blog.negocio;
 
 import com.blog.dao.EntradaDao;
 import com.blog.entidades.Entrada;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,6 +22,10 @@ public class EntradaNegocio {
 
     public boolean guardarEntrada(Entrada entrada) throws Exception {
         return entradaDao.guardarEntrada(entrada);
+    }
+
+    public List<Entrada> getListaUltimasEntradas() throws Exception {
+        return entradaDao.getListaUltimasEntradas();
     }
     
 }
